@@ -373,12 +373,8 @@ Architecture main of SYNC is
         end if;
     end process;
   
-  --APP_X <= MinX + Column1 - SizeAPPDiv2;
-  --APP_Y <= MinY + Row1    - SizeAPPDiv2;
   SQ2(HPOS, VPOS, APP_X, APP_Y, DRAW_APP);
   
-  --SN_X <= MinX + Column1 - SizeSNDiv2;
-  --SN_Y <= MinY + Row2    - SizeSNDiv2;
   SQ3(HPOS, VPOS, SN_X, SN_Y, DRAW_SN);
   SQ4(HPOS, VPOS, Points, MinX, MinY, DRAW_SCORE);
   

@@ -22,11 +22,6 @@ Architecture structural of VGA is
 ------------------------------------
 
 	Component PLL is
-		--Port(
-		--	clk_in_clk  : in  std_logic := 'X';
-		--	reset_reset : in  std_logic := 'X';
-		--	clk_out_clk : out std_logic
-		--);
 		Port(
 		areset		: IN STD_LOGIC  := '0';
 		inclk0		: IN STD_LOGIC  := '0';
@@ -58,13 +53,11 @@ Architecture structural of VGA is
 Begin
 
 	C1: SYNC port map(VGACLK, selAxis, resOut, StartStop, VGA_HS, VGA_VS, VGA_R, VGA_G, VGA_B);
+	
 	C2: PLL  port map(areset => '0',
 							inclk0 => CLOCK_50,
 							c0		=>  VGACLK);
 							
-							--locked => );
-							
-							--CLOCK_50, '0', VGACLK);
 	C3: top  port map(selectAxis  => selAxis,
 							resOut		=> resOut,
 							reset       => '0', 

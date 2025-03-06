@@ -13,7 +13,8 @@ entity RandomNumberGenerator is
 end RandomNumberGenerator;
 
 architecture Behavioral of RandomNumberGenerator is
-    signal rand_seed : INTEGER := 42; -- Initial seed value, you can choose any value
+	 -- Initial seed value, you can choose any value
+    signal rand_seed : INTEGER := 42; 
 	 signal check : integer;
 	 signal keep  : integer;
 begin

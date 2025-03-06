@@ -43,7 +43,6 @@ architecture vhdl of top is
 	
 	-- FSM Signals
 	type state is (
-		-- TODO : PUT YOUR FSM STATES HERE
 		INIT,
 		INIT_SPI,
 		INIT_measure,
@@ -76,7 +75,7 @@ begin
 		ch5 => reg0(7 downto 4)
 	);
 	
-	-- 1 pour Negatif / 0 pour Positif
+	-- 1 for negatvi / 0 for positiv
 	resOut <= '1' when reg2(3 downto 0) = "1111" else '0';
 	
 	-- instanciate SPI Driver
@@ -94,9 +93,7 @@ begin
 		SPI_CK
 	);
 	
-	--===========================
-	-- TODO: PUT YOUR FSM HERE!!!
-	--===========================
+
 	process(currentState, selectAxis, ready, reg0, reg1, reg2, result, bufferResult)
 	begin
 		nextState <= currentState;

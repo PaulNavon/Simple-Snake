@@ -125,7 +125,6 @@ Package BODY MY4 is
 					
 				end if;
 			else
-				--DRAW <= '0';
 			end if;
 			
 	end SQ4;
