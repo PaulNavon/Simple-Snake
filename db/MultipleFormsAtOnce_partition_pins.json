@@ -1,0 +1,213 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "hex0top[0]",
+					"strict" : false
+				},
+				{
+					"name" : "hex0top[1]",
+					"strict" : false
+				},
+				{
+					"name" : "hex0top[2]",
+					"strict" : false
+				},
+				{
+					"name" : "hex0top[3]",
+					"strict" : false
+				},
+				{
+					"name" : "hex0top[4]",
+					"strict" : false
+				},
+				{
+					"name" : "hex0top[5]",
+					"strict" : false
+				},
+				{
+					"name" : "hex0top[6]",
+					"strict" : false
+				},
+				{
+					"name" : "hex1top[0]",
+					"strict" : false
+				},
+				{
+					"name" : "hex1top[1]",
+					"strict" : false
+				},
+				{
+					"name" : "hex1top[2]",
+					"strict" : false
+				},
+				{
+					"name" : "hex1top[3]",
+					"strict" : false
+				},
+				{
+					"name" : "hex1top[4]",
+					"strict" : false
+				},
+				{
+					"name" : "hex1top[5]",
+					"strict" : false
+				},
+				{
+					"name" : "hex1top[6]",
+					"strict" : false
+				},
+				{
+					"name" : "hex2top[6]",
+					"strict" : false
+				},
+				{
+					"name" : "hex3top[3]",
+					"strict" : false
+				},
+				{
+					"name" : "hex3top[4]",
+					"strict" : false
+				},
+				{
+					"name" : "hex4top[0]",
+					"strict" : false
+				},
+				{
+					"name" : "hex4top[1]",
+					"strict" : false
+				},
+				{
+					"name" : "hex4top[2]",
+					"strict" : false
+				},
+				{
+					"name" : "hex4top[3]",
+					"strict" : false
+				},
+				{
+					"name" : "hex4top[4]",
+					"strict" : false
+				},
+				{
+					"name" : "hex4top[5]",
+					"strict" : false
+				},
+				{
+					"name" : "hex4top[6]",
+					"strict" : false
+				},
+				{
+					"name" : "hex5top[0]",
+					"strict" : false
+				},
+				{
+					"name" : "hex5top[1]",
+					"strict" : false
+				},
+				{
+					"name" : "hex5top[2]",
+					"strict" : false
+				},
+				{
+					"name" : "hex5top[3]",
+					"strict" : false
+				},
+				{
+					"name" : "hex5top[4]",
+					"strict" : false
+				},
+				{
+					"name" : "hex5top[5]",
+					"strict" : false
+				},
+				{
+					"name" : "hex5top[6]",
+					"strict" : false
+				},
+				{
+					"name" : "SPI_DO",
+					"strict" : false
+				},
+				{
+					"name" : "SPI_CS",
+					"strict" : false
+				},
+				{
+					"name" : "SPI_CK",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_HS",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_VS",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_R[0]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_R[1]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_R[2]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_R[3]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_G[0]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_G[1]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_G[2]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_G[3]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_B[0]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_B[2]",
+					"strict" : false
+				},
+				{
+					"name" : "VGA_B[3]",
+					"strict" : false
+				},
+				{
+					"name" : "selAxis",
+					"strict" : false
+				},
+				{
+					"name" : "CLOCK_50",
+					"strict" : false
+				},
+				{
+					"name" : "SPI_DI",
+					"strict" : false
+				},
+				{
+					"name" : "StartStop",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

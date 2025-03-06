@@ -1,0 +1,23 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+Package MY is
+	Procedure SQ(Signal Xcur, Ycur, Xpos, Ypos : in integer;
+					 Signal RGB : out std_logic_vector(3downto 0);
+					 Signal DRAW : out std_logic);
+End MY;
+
+Package BODY MY is
+	Procedure SQ(Signal Xcur, Ycur, Xpos, Ypos : in integer;
+					 Signal RGB : out std_logic_vector(3downto 0);
+					 Signal DRAW : out std_logic) is
+	Begin
+		if(Xcur > Xpos AND Xcur < (Xpos + 100)) AND Ycur > Ypos AND Ycur < (Ypos + 100)) then
+			RGB<= "1111";
+			DRAW <= '1';
+		else
+			DRAW <= '0';
+		end if;
+	end SQ;
+end MY;

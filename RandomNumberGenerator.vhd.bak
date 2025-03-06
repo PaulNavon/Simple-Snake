@@ -1,0 +1,34 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+entity RandomNumberGenerator is
+    Port ( clk : in STD_LOGIC;
+           reset : in STD_LOGIC;
+           randomNumber : out STD_LOGIC_VECTOR(3 downto 0)
+         );
+end RandomNumberGenerator;
+
+architecture Behavioral of RandomNumberGenerator is
+    signal seed : unsigned(15 downto 0) := (others => '0');
+    signal lcg_value : unsigned(31 downto 0) := (others => '0');
+    constant a : unsigned(31 downto 0) := to_unsigned(1664525, 32);
+    constant c : unsigned(31 downto 0) := to_unsigned(1013904223, 32);
+begin
+
+    process(clk, reset)
+    begin
+        if reset = '1' then
+            seed <= (others => '0');
+            lcg_value <= (others => '0');
+        elsif rising_edge(clk) then
+            seed <= seed + 1;
+            lcg_value <= (a * lcg_value + c) mod 2**32;
+        end if;
+    end process;
+
+    randomNumber <= std_logic_vector(seed mod 16 + 1);
+
+end Behavioral;

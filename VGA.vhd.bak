@@ -1,0 +1,41 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+Entity VGA is
+	Port(
+		CLOCK_24 : in std_logic_vector(1 downto 0);
+		VGA_HS, VGA_VS : out std_logic;
+		VGA_R, VGA_G, VGA_B : out std_logic_vector(3 downto 0);
+		
+	);
+End Entity;
+
+Architecture structural of VGA is
+ Signal VGACLK, RESET : std_logic := 0;
+
+------------------------------------
+
+	Component PLL is
+		Port(
+			clk_in_clk : in std_logic := 'X';
+			reset_reset : in std_logic : = 'X';
+			clk_out_clk : out std_logic
+		);
+	End Component;
+
+------------------------------------
+	Component SYNC is
+		Port(
+			clk : in std_logic;
+			HSYNC, VSYNC : out std_logic;
+			R, G, B : out std_logic_vector(3 downto 0)
+		);
+	End Component;
+	
+Begin
+
+	C1: SYNC port map(VGACLK, VGA_HS, VGA_VS, VGA_R, VGA_G, VGA_B);
+	C2: PLL port map(CLOCK_2(0), RESET, VGACLK);
+
+End Architecture;

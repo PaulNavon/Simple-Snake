@@ -1,0 +1,34 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+Package MY4 is
+	Procedure SQ4(Signal Xcur, Ycur, Xpos, Ypos : in integer;
+					 Signal DRAW : out std_logic);
+End MY4;
+
+Package BODY MY4 is
+	Procedure SQ4(Signal Xcur, Ycur : in integer;
+					 Signal DRAW : out std_logic) is
+					 
+	constant letter_s : std_logic_vector(399 downto 0) := "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111111000000000000010000000000000000000100000000000000000001111111000000000000000000010000000000000000000100000000000000000001000000000000000000010000000000000000000100000000000001111111000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
+
+	Begin
+			if (HPOS >= 500 AND (0 <= VPOS AND VPOS < 20)) then
+				if(HPOS < 520) then
+					if(letter_s( ( 399 - ((20 * VPOS) + (HPOS mod 500)) ) ) = '1') then
+						DRAW <= '1';
+					else
+						DRAW <= '0';
+					end if;
+				elsif(520 <= HPOS AND HPOS < 540) then
+				elsif(540 <= HPOS AND HPOS < 560) then
+				elsif(560 <= HPOS AND HPOS < 580) then
+				elsif(580 <= HPOS AND HPOS < 600) then
+				elsif(600 <= HPOS AND HPOS < 620) then
+				elsif(620 <= HPOS AND HPOS < 640) then
+				end if;
+			end if;
+			
+	end SQ4;
+end MY;

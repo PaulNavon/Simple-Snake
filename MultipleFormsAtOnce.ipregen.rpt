@@ -1,0 +1,129 @@
+IP Upgrade report for MultipleFormsAtOnce
+Tue Oct 22 14:20:30 2024
+Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. IP Upgrade Summary
+  3. Successfully Upgraded IP Components
+  4. IP Upgrade Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2024  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------+
+; IP Upgrade Summary                                                            ;
++------------------------------+------------------------------------------------+
+; IP Components Upgrade Status ; Passed - Tue Oct 22 14:20:30 2024              ;
+; Quartus Prime Version        ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
+; Revision Name                ; MultipleFormsAtOnce                            ;
+; Top-level Entity Name        ; VGA                                            ;
+; Family                       ; MAX 10                                         ;
++------------------------------+------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Successfully Upgraded IP Components                                                                                     ;
++-------------+----------------+---------+-----------------------+----------------------+-----------------------+---------+
+; Entity Name ; Component Name ; Version ; Original Source File  ; Generation File Path ; New Source File       ; Message ;
++-------------+----------------+---------+-----------------------+----------------------+-----------------------+---------+
+; PLL         ; Qsys           ; 20.1    ; PLL/synthesis/PLL.qip ; PLL.qsys             ; PLL/synthesis/PLL.qip ;         ;
++-------------+----------------+---------+-----------------------+----------------------+-----------------------+---------+
+
+
++---------------------+
+; IP Upgrade Messages ;
++---------------------+
+Info (11902): Backing up file "PLL.qsys" to "PLL.BAK.qsys"
+Info (11902): Backing up file "PLL/synthesis/PLL.v" to "PLL.BAK.v"
+Info (11837): Started upgrading IP component Qsys with file "PLL.qsys"
+Info: 2024.10.22.14:20:00 Info: Starting to upgrade the IP cores in the Platform Designer system
+Info: 2024.10.22.14:20:00 Info: Finished upgrading the ip cores
+Info: 2024.10.22.14:20:06 Info: Saving generation log to C:/Users/PaulN/Travail/ING4/S1/VHDL/Lab6_Game/Test/PLL
+Info: 2024.10.22.14:20:06 Info: Starting: Create simulation model
+Info: 2024.10.22.14:20:06 Info: qsys-generate C:\Users\PaulN\Travail\ING4\S1\VHDL\Lab6_Game\Test\PLL.qsys --simulation=VERILOG --allow-mixed-language-simulation --output-directory=C:\Users\PaulN\Travail\ING4\S1\VHDL\Lab6_Game\Test\PLL\simulation --family="MAX 10" --part=10M50DAF484C7G
+Info: 2024.10.22.14:20:06 Info: Loading Test
+Info: 2024.10.22.14:20:06 Info: Reading input file
+Info: 2024.10.22.14:20:06 Info: Adding altpll_0 [altpll 23.1]
+Info: 2024.10.22.14:20:06 Info: Parameterizing module altpll_0
+Info: 2024.10.22.14:20:06 Info: Building connections
+Info: 2024.10.22.14:20:06 Info: Parameterizing connections
+Info: 2024.10.22.14:20:06 Info: Validating
+Info: 2024.10.22.14:20:07 Info: Done reading input file
+Info: 2024.10.22.14:20:07 Info: PLL: Generating PLL "PLL" for SIM_VERILOG
+Info: 2024.10.22.14:20:11 Info: altpll_0: Generating Verilog simulation model
+Warning: 2024.10.22.14:20:22 Warning: Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info: 2024.10.22.14:20:22 Info: altpll_0: Generated simulation model PLL_altpll_0.vo
+Info: 2024.10.22.14:20:22 Info: altpll_0: "PLL" instantiated altpll "altpll_0"
+Info: 2024.10.22.14:20:22 Info: PLL: Done "PLL" with 2 modules, 2 files
+Info: 2024.10.22.14:20:23 Info: qsys-generate succeeded.
+Info: 2024.10.22.14:20:23 Info: Finished: Create simulation model
+Info: 2024.10.22.14:20:23 Info: Starting: Create Modelsim Project.
+Info: 2024.10.22.14:20:23 Info: sim-script-gen --spd=C:\Users\PaulN\Travail\ING4\S1\VHDL\Lab6_Game\Test\PLL\PLL.spd --output-directory=C:/Users/PaulN/Travail/ING4/S1/VHDL/Lab6_Game/Test/PLL/simulation
+Info: 2024.10.22.14:20:23 Info: Doing: ip-make-simscript --spd=C:\Users\PaulN\Travail\ING4\S1\VHDL\Lab6_Game\Test\PLL\PLL.spd --output-directory=C:/Users/PaulN/Travail/ING4/S1/VHDL/Lab6_Game/Test/PLL/simulation
+Info: 2024.10.22.14:20:24 Info: Generating the following file(s) for MODELSIM simulator in C:/Users/PaulN/Travail/ING4/S1/VHDL/Lab6_Game/Test/PLL/simulation
+Info: 2024.10.22.14:20:24 Info:     mentor
+Info: 2024.10.22.14:20:24 Info: Generating the following file(s) for RIVIERA simulator in C:/Users/PaulN/Travail/ING4/S1/VHDL/Lab6_Game/Test/PLL/simulation
+Info: 2024.10.22.14:20:24 Info:     aldec
+Info: 2024.10.22.14:20:24 Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under C:/Users/PaulN/Travail/ING4/S1/VHDL/Lab6_Game/Test/PLL/simulation
+Info: 2024.10.22.14:20:24 Info: Regenerate these scripts whenever you make any change to any Quartus-generated IP in your project.
+Info: 2024.10.22.14:20:24 Info: Finished: Create Modelsim Project.
+Info: 2024.10.22.14:20:24 Info: Starting: Create block symbol file (.bsf)
+Info: 2024.10.22.14:20:24 Info: qsys-generate C:\Users\PaulN\Travail\ING4\S1\VHDL\Lab6_Game\Test\PLL.qsys --block-symbol-file --output-directory=C:\Users\PaulN\Travail\ING4\S1\VHDL\Lab6_Game\Test\PLL --family="MAX 10" --part=10M50DAF484C7G
+Info: 2024.10.22.14:20:24 Info: Loading Test
+Info: 2024.10.22.14:20:24 Info: Reading input file
+Info: 2024.10.22.14:20:24 Info: Adding altpll_0 [altpll 23.1]
+Info: 2024.10.22.14:20:24 Info: Parameterizing module altpll_0
+Info: 2024.10.22.14:20:24 Info: Building connections
+Info: 2024.10.22.14:20:24 Info: Parameterizing connections
+Info: 2024.10.22.14:20:24 Info: Validating
+Info: 2024.10.22.14:20:24 Info: Done reading input file
+Info: 2024.10.22.14:20:26 Info: qsys-generate succeeded.
+Info: 2024.10.22.14:20:26 Info: Finished: Create block symbol file (.bsf)
+Info: 2024.10.22.14:20:26 Info:
+Info: 2024.10.22.14:20:26 Info: Starting: Create HDL design files for synthesis
+Info: 2024.10.22.14:20:26 Info: qsys-generate C:\Users\PaulN\Travail\ING4\S1\VHDL\Lab6_Game\Test\PLL.qsys --synthesis=VERILOG --output-directory=C:\Users\PaulN\Travail\ING4\S1\VHDL\Lab6_Game\Test\PLL\synthesis --family="MAX 10" --part=10M50DAF484C7G
+Info: 2024.10.22.14:20:26 Info: Loading Test
+Info: 2024.10.22.14:20:27 Info: Reading input file
+Info: 2024.10.22.14:20:27 Info: Adding altpll_0 [altpll 23.1]
+Info: 2024.10.22.14:20:27 Info: Parameterizing module altpll_0
+Info: 2024.10.22.14:20:27 Info: Building connections
+Info: 2024.10.22.14:20:27 Info: Parameterizing connections
+Info: 2024.10.22.14:20:27 Info: Validating
+Info: 2024.10.22.14:20:27 Info: Done reading input file
+Info: 2024.10.22.14:20:27 Info: PLL: Generating PLL "PLL" for QUARTUS_SYNTH
+Info: 2024.10.22.14:20:30 Info: altpll_0: "PLL" instantiated altpll "altpll_0"
+Info: 2024.10.22.14:20:30 Info: PLL: Done "PLL" with 2 modules, 2 files
+Info: 2024.10.22.14:20:30 Info: qsys-generate succeeded.
+Info: 2024.10.22.14:20:30 Info: Finished: Create HDL design files for synthesis
+Info (11131): Completed upgrading IP component Qsys with file "PLL.qsys"
+Info (23030): Evaluation of Tcl script c:/intelfpga_lite/23.1std/quartus/common/tcl/internal/ip_regen/ip_regen.tcl was successful
+Info: Quartus Prime Shell was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4789 megabytes
+    Info: Processing ended: Tue Oct 22 14:20:30 2024
+    Info: Elapsed time: 00:00:46
+    Info: Total CPU time (on all processors): 00:00:44
+
+

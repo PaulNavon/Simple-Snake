@@ -1,0 +1,56 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+Entity SYNC is
+	Port(
+		clk : in std_logic;
+		HSYNC, VSYNC : out std_logic;
+		R, G, B : out std_logic_vector(3 downto 0)
+	);
+End Entity;
+
+Architecture main of SYNC is
+
+ Signal HPOS: integer range 0 to 1688 :=0;
+ Signal VPOS: integer range 0 to 1688 :=0;
+ 
+ Begin
+	Process(clk)
+	Begin
+		if(clk'event and clk = '1') then
+			if(HPOS < 1688) then
+				HPOS <= HPOS + 1;
+			else
+				HPOS <= 0;
+				if(VPOS < 1066) then
+					VPOS <= VPOS + 1;
+				else
+					VPOS <= 0;
+				end if;
+			end if;
+		end if;
+		
+		-- Check HPOS for HSYNC
+		if(HPOS > 48 AND HPOS < 160) then
+			HSYNC <= '0';
+		else
+			HSYNC <= '1';
+		end if;
+		
+		-- Check VPOS for VSYNC
+		if(VPOS > 0 AND VPOS < 4) then
+			VSYNC <= '0';
+		else
+			VSYNC <= '1';
+		end if;
+		
+		-- Check .. for RGB
+		if((HPOS > 0 AND HPOS < 408) AND (VPOS > 0 AND VPOS < 42)) then
+			R <= (others =>'0');
+			G <= (others =>'0');
+			B <= (others =>'0');
+		end if;
+	end if;
+	end process;
+end architecture;
