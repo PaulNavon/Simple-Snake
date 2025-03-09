@@ -10,8 +10,8 @@ At the top right, you'll see a score counter that goes from 0 to 5.
 
 The red circle is the apple you eat to get a point.
 
-<div style="width: 100%; max-width: 1000px; margin: auto;">
-  <img src="README/StartGame.png" alt="GAmeboard" style="max-width: 50%; height: auto;"/>
+<div style="width: 100%; max-width: 500px; margin: auto;">
+  <img src="README/StartGame.png" alt="Gameboard" style="max-width: 50%; height: auto;"/>
 </div>
 
 When you eat the apple, it takes a second for the game to refresh and for the apple to appear in another cell.
