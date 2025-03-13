@@ -79,50 +79,52 @@ to match your specific board.
 
 ---
 
-The DE10-Lite board includes a VGA output. The VGA synchronization signals are
-provided directly from the MAX 10 FPGA, and a 4-bit DAC using resistor network is used to produce the analog data
-signals (red, green, and blue). The associated schematic is given below and can support standard VGA resolution
-(640x480 pixels, at 25 MHz).
+## Technical Implementation and Design Considerations         
+
+The DE10-Lite board features a VGA output. The VGA synchronization signals are directly supplied by the MAX 10 FPGA, and
+a DAC using a resistor network generates the analog data signals (red, green, and blue). The associated schematic
+supports standard VGA resolution (640x480 pixels, at 25 MHz).
 
 <img src="README/VGA.png" alt="VGA" width="50%" height="100%"/>
 
-We will have 2 signals to control in order to manage the visual output and we also have 3 RGB signals.
+There are 2 control signals for managing the visual output, along with 3 RGB signals.
 
-We know our display resolution, which is 640 by 480, but the VGA signal is slightly larger for reasons of front proch,
-synchronisation, back porch and finally addressable video bandwidth.
+We are aware that our display resolution is 640 by 480. However, the VGA signal is slightly larger to accommodate the
+front porch, synchronization, back porch, and the addressable video bandwidth.
 
 <img src="README/VGA_Management.png" alt="VGA_Management" width="50%" height="100%"/>
 
-A 25 MHz clock divided by the number of pixels gives a frequency just a bit under 60 Hz.
+A 25 MHz clock divided by the number of pixels results in a screen refresh rate of approximately 60 Hz.
 
-###
+We opted for a 4 by 4 grid, resulting in a total of 16 rectangles. Given a resolution of 640 by 480, we decided to
+create rectangles that are 160 pixels wide on the X-axis and 120 pixels high on the Y-axis.
 
-We choose to opt for a 4 by 4 grid, totaling 16 rectangles, as manually
-instantiating them is a laborious task. Considering a resolution of 640 by 480, we decided to have rectangles of 160
-pixels in the X-axis and 120 pixels in the Y-axis.
-
-By working directly on the VGA signal, we must manually define the conditions to be met for drawing and, indirectly,
-choose the pixels to be drawn under certain conditions. The creation of our custom libraries (MY files) standardizes the handling of repetitive shapes. The same applies
-to writing because we need to define bitmaps. We have decided to write characters with a resolution of 20 by 20 pixels.
-This represents an array of 400 "std_logic" per character. We have limited ourselves to writing "score: 0", with the
-number of points ranging from 0 to 5. Below is the image of the number 3 bitmap.
+By working directly with the VGA signal, we need to manually define the conditions for drawing and indirectly select
+which pixels to draw under specific conditions. Creating our custom libraries (MY files) standardizes the handling of
+repetitive shapes. The same approach applies to writing, as we need to define bitmaps. We chose to write characters with
+a resolution of 20 by 20 pixels. Here is an example of a bitmap:
 
 <img src="README/Bitmap_3.png" alt="Bitmap_3" width="50%" height="100%"/>
 
-In order to make the user experience more enjoyable and to be able to take control of the associated manipulations
-for moving around (X-Y axis, orientation in degrees), we created a clock division using a process this time and not a
-PLL (the division factor is too high). This gives a frequency of 1 Hz, or in other words, one movement per second. It
-is therefore important to differentiate between the frequencies. The screen refreshes 60 times a second, whereas the
-game’s actions take place once a second. So we understand that there is a separation in the VHDL code of the actions to
-be carried out according to the frequency in play.
+To enhance the user experience and allow control over movements (X-Y axis, orientation in degrees), we implemented a
+clock division using a process instead of a PLL (due to the high division factor). This results in a frequency of 1 Hz,
+or one movement per second.
 
-In games, there is often an element of randomness. This is also the case in our game. You have to be able to move
-the apple when it’s eaten. This requires a great deal of thought, because the apple has to be able to access all the squares
-on the board, as well as the player’s position. To do this, we set up a pseudo-random and assign a new position to the
-apple when necessary. As this is a pseudo-random algorithm, certain specific cases lead to the limits of this algorithm.
-Indeed, even if we consider the player’s position, it may sometimes happen that the apple finds the same position as
-the position where it was eaten, or that we have the impression that the apple follows the rectangle. This is precisely
-because of the mathematical limits associated with this homemade randomness.
+The screen refreshes 60 times per second, while game actions occur once per second. This separation in the VHDL code
+distinguishes actions based on the frequency in use.
+
+In games, randomness is often a key element. We implemented a pseudo-random algorithm to assign a new position to the
+apple when needed. However, due to the nature of pseudo-random algorithms, certain specific cases can reveal the
+limitations of this approach.
+
+For instance, even considering the player’s position, it may occasionally happen that the apple appears in the same
+position where it was eaten, or it may seem like the apple is following the rectangle. This occurs due to the
+mathematical constraints of our homemade randomness.
+
+The RTL view should resemble this:
+- PLL: The clock divider to achieve a 25 MHz clock.
+- top: The block controlling the accelerometer and seven-segment display.
+- SYNC: Where game functions and graphics are defined.
 
 <img src="README/RTL.png" alt="RTL" width="90%" height="100%"/>
 
